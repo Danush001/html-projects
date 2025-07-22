@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Games</title>
+</head>
+<style>
+    div{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        
+
+    }
+</style>
+<body>
+    <h1>GUESS THE NUMBER</h1>
+    <input id="guessnumber">
+    <button onclick="check()">check</button>
+    <p id="result">your guess right/wrong</p>
+    <p id="points">points:10</p>
+    <script>
+        var guessnumber=document.getElementById("guessnumber")
+        var result=document.getElementById("result")
+        var points=document.getElementById("points")
+        var randomNumber= Math.floor(Math.random()*10)+1;
+        var totalpoints=10;
+        function check(){
+            var enterednumber=guessnumber.value;
+            if(randomNumber==enterednumber){
+                console.log("right")
+                result.textContent="right"
+                alert("you won")
+            }
+            else{
+               totalpoints=totalpoints-1
+                points.textContent="points:"+totalpoints
+               console.log("wrong")
+                result.textContent="wrong"
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
